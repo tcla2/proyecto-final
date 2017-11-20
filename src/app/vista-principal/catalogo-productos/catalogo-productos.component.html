@@ -1,0 +1,30 @@
+
+  <div class="row">
+    <div class="col-sm-9">
+      <h2>Catalogo de productos</h2>
+    </div>
+    <div class="col-sm-3">
+      <p>Que estas buscando?</p>
+      <input type="search" class="searchbox-input" placeholder="Buscar producto"
+            [(ngModel)]="searchText">
+    </div>
+  </div>
+  <div class="row card-group">
+    <div class="col-sm-3" style=""
+    *ngFor="let producto of productos | searchFilter : 'nombre' : searchText ">
+      <div class="card">
+        <img class="card-img-top" [src]="producto.imagen" alt="Card image cap">
+        <div class="card-body">
+          <span id="productId" class="hidden">{{producto.nombre}}</span>
+          <h4 class="card-title">{{producto.nombre}}</h4>
+          <p class="card-text"><strong>Precio:</strong>{{producto.precio}}</p>
+          <p class="card-text"><strong>Unidades disponibles:</strong><span id="unidadDisponible-{{producto.cod}}">{{producto.unidad_disponible}}</span></p>
+          <div class="card-buttons">
+            <a href="#" class="btn btn-primary" [routerLink]="['../producto', producto.cod ]">Ver mas</a>
+            <a class="btn btn-warning" (click)="agregarCarrito(producto, inputNumber.value)">Anadir</a>
+            <input class="number text-center" type="number" name="" value="2" #inputNumber>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>

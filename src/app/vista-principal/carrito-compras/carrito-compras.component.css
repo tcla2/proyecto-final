@@ -1,0 +1,12 @@
+.row{
+  overflow: auto;
+  margin-top: 5%;
+}
+
+.productDetails{
+  display: flex;
+}
+
+.productText{
+  margin-left: 2%;
+}

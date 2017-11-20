@@ -1,0 +1,12 @@
+/*.navbar-nav{
+  float: right !important;
+}
+
+.nav-item{
+  display: flex;
+  float: right !important;
+}*/
+
+.badge{
+  background-color: red !important;
+}
